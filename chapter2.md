@@ -1,63 +1,50 @@
 # Exercises - Chapter 2
 
-## Minimum
-
-``` js
-function min(x, y) {
-  if (x <= y) 
-    return x
-  else 
-    return y
-  }
-  
-console.log(min(0, 10));
-// → 0
-console.log(min(0, -10));
-// → -10
-```
-
-## Recursion
+## Looping a triangle
 
 ```js
-function isEven(x) {
-  if (x < 0)
-    x = -x
-  
-  if (x === 1) 
-    return false
-  else if (x === 0)
-    return true
-  else 
-    return isEven(x - 2)
-  }
-
-console.log(isEven(50));
-// → true
-console.log(isEven(75));
-// → false
-console.log(isEven(-1));
-// → ??
+let s = "";
+while (s.length < 7) {
+  s = s + "#";
+  console.log(s)
+}
 ```
 
-## Bean counting
+## FizzBuzz
 
 ```js
-function countBs(s) {
-  return countChar(s, "B")
-  }
-
-function countChar(str, character) {
-  let counter = 0
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === character)
-      counter += 1
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0)
+    {
+      console.log("FizzBuzz")
     }
-  return counter
+  else if (i % 3 === 0) {
+    console.log("Fizz")
+    }
+  else if (i % 5 === 0) {
+    console.log("Buzz")
+    }
+  else console.log(i);
+  }
+  ```
+
+  ## Chessboard
+
+```js
+let size = 8
+let s = ""
+
+for (let x = 0; x < size; x++) {
+  for (let i = 0; i < size; i++ ) {
+    if (s.length % 2 === 0) {
+      s = s + " ";
+    } else {
+      s = s + "#"
+    } 
   }
   
+  s = s + `\n`;
+}
 
-console.log(countBs("BOB"));
-// → 2
-console.log(countChar("kakkerlak", "k"));
-// → 4
+console.log(s)
 ```
